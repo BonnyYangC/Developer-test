@@ -16,6 +16,9 @@ interface IFormContext {
   onHandleBackToFirst: () => void;
 }
 
+{
+  /** custom form context to handle event like set form data, back and forward page */
+}
 const FormContext = createContext<IFormContext>({
   formData: {},
   onHandleBack: () => {},
@@ -33,14 +36,23 @@ export function FormProvider({ children }: IProps) {
   const [formData, setFormData] = useState();
   const [step, setStep] = useState(1);
 
+  {
+    /** handle next event to next page */
+  }
   function onHandleNext() {
     setStep((prev) => prev + 1);
   }
 
+  {
+    /** handle back event to prev page */
+  }
   function onHandleBack() {
     setStep((prev) => prev - 1);
   }
 
+  {
+    /** handle special event back to first page */
+  }
   function onHandleBackToFirst() {
     setStep(1);
   }

@@ -3,11 +3,15 @@ import { useFormState } from "./FormContext";
 import Image from "next/image";
 import DataConfirmRow from "@/app/components/dataConfirmRow";
 import Button from "@/app/components/button";
-
+{
+  /** This is the forth page of design, displaying visit info along with message box showing submit successful*/
+}
 export default function VisitSubmittedForm() {
   const { formData, setFormData, onHandleBackToFirst } = useFormState();
   const { register, handleSubmit } = useForm();
-
+  {
+    /** Handle form submit event: clear form data and navigate to first page */
+  }
   const onHandleFormSubmit = () => {
     setFormData({});
     onHandleBackToFirst();
@@ -28,6 +32,7 @@ export default function VisitSubmittedForm() {
         Your Visit details
       </h1>
       <form className="space-y-6" onSubmit={handleSubmit(onHandleFormSubmit)}>
+        {/** custom component to display visit information */}
         <div className="grid grid-cols-2 gap-2 w-1/2">
           <DataConfirmRow label="Visit name:" value={formData.name} />
           <DataConfirmRow
@@ -45,7 +50,8 @@ export default function VisitSubmittedForm() {
             value={formData.meetingPointRoom}
           />
           <DataConfirmRow label="Visit duration:" value={formData.duration} />
-        </div>
+        </div>{" "}
+        {/** custom button to next page which will back to first page with form data resetted */}
         <div className="flex gap-4 justify-end">
           <Button text="Register a new Visit" />
         </div>

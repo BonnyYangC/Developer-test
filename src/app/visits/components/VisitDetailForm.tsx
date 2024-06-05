@@ -2,6 +2,9 @@ import { useForm } from "react-hook-form";
 import { useFormState } from "./FormContext";
 import Button from "@/app/components/button";
 
+{
+  /** defination of form data, including all fields like name, date etc. */
+}
 type TFormValues = {
   name: string;
   date: string;
@@ -13,12 +16,18 @@ type TFormValues = {
   meetingPointRoom: string;
 };
 
+{
+  /** This is the second page of design, asking to input visit details*/
+}
 export default function VisitDetailForm() {
   const { onHandleNext, setFormData, formData } = useFormState();
   const { register, handleSubmit } = useForm<TFormValues>({
     defaultValues: formData,
   });
 
+  {
+    /** Handle form submit event: update form data and navigate to next page */
+  }
   const onHandleFormSubmit = (data: TFormValues) => {
     setFormData((prev: any) => ({ ...prev, ...data }));
     onHandleNext();
@@ -29,11 +38,13 @@ export default function VisitDetailForm() {
       <h1 className="text-2xl font-semibold py-10 text-gray-500">
         Add Visit details
       </h1>
+      {/** form to handle visit details fields */}
       <form
         className="flex gap-1 flex-col"
         onSubmit={handleSubmit(onHandleFormSubmit)}
       >
         <div className="grid grid-cols-2 gap-5 w-1/2">
+          {/** Visit name field */}
           <div className="flex flex-col gap-1">
             <label htmlFor="name">Visit name</label>
             <input
@@ -46,6 +57,7 @@ export default function VisitDetailForm() {
             />
           </div>
 
+          {/** Entry point field */}
           <div className="flex flex-col gap-1">
             <label htmlFor="entry-point">Entry point</label>
             <select
@@ -59,6 +71,7 @@ export default function VisitDetailForm() {
             </select>
           </div>
 
+          {/** Date field */}
           <div className="flex flex-col gap-1">
             <label htmlFor="date">Date</label>
             <input
@@ -70,6 +83,7 @@ export default function VisitDetailForm() {
             />
           </div>
 
+          {/** Meeting point level field */}
           <div className="flex flex-col gap-1">
             <label htmlFor="meeting-point-level">Meeting point level</label>
             <select
@@ -83,6 +97,7 @@ export default function VisitDetailForm() {
             </select>
           </div>
 
+          {/** Entry time field */}
           <div className="flex flex-col gap-1">
             <label htmlFor="time">Entry time</label>
             <input
@@ -94,6 +109,7 @@ export default function VisitDetailForm() {
             />
           </div>
 
+          {/** Meeting point stand field */}
           <div className="flex flex-col gap-1">
             <label htmlFor="meeting-point-stand">Meeting point stand</label>
             <select
@@ -107,6 +123,7 @@ export default function VisitDetailForm() {
             </select>
           </div>
 
+          {/** Visit duration field */}
           <div className="flex flex-col gap-1">
             <label htmlFor="duration">Visit duration</label>
             <select
@@ -120,6 +137,7 @@ export default function VisitDetailForm() {
             </select>
           </div>
 
+          {/** Meeting point room field */}
           <div className="flex flex-col gap-1">
             <label htmlFor="meeting-point-room">Meeting point room</label>
             <select
@@ -133,6 +151,7 @@ export default function VisitDetailForm() {
             </select>
           </div>
         </div>
+        {/** custom button to next page which is visit review page */}
         <div className="flex gap-4 justify-end mt-4">
           <Button text="Review" />
         </div>
