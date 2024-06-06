@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
-import { useFormState } from "./FormContext";
+import { useFormState } from "./formContext";
 import Card from "../../components/card";
 import Button from "@/app/components/button";
+import { visitTypes } from "@/app/data";
 
 type TFormValues = {
   visitorType: string;
@@ -43,29 +44,17 @@ export default function VisitsForm() {
             required={true}
           />
           <div className="flex">
-            <div className="flex-1 text-center">
-              <Card
-                text="Visitor"
-                image="/visitor.svg"
-                onClick={() => setValue("visitorType", "Visitor")}
-              />
-            </div>
-
-            <div className="flex-1 text-center">
-              <Card
-                text="Delivery"
-                image="/delivery.svg"
-                onClick={() => setValue("visitorType", "Delivery")}
-              />
-            </div>
-
-            <div className="flex-1 text-center">
-              <Card
-                text="Function"
-                image="/function.svg"
-                onClick={() => setValue("visitorType", "Function")}
-              />
-            </div>
+            {visitTypes.map((type) => {
+              return (
+                <div key={type.type} className="flex-1 text-center">
+                  <Card
+                    text={type.type}
+                    image={type.img}
+                    onClick={() => setValue("visitorType", type.type)}
+                  />
+                </div>
+              );
+            })}
           </div>
 
           <div className="w-2/5 flex gap-y-5 flex-col">

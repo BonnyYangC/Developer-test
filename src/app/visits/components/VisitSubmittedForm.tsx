@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
-import { useFormState } from "./FormContext";
+import { useFormState } from "./formContext";
 import Image from "next/image";
-import DataConfirmRow from "@/app/components/dataConfirmRow";
 import Button from "@/app/components/button";
+import DataReview from "./dataReview";
 {
   /** This is the forth page of design, displaying visit info along with message box showing submit successful*/
 }
@@ -33,24 +33,7 @@ export default function VisitSubmittedForm() {
       </h1>
       <form className="space-y-6" onSubmit={handleSubmit(onHandleFormSubmit)}>
         {/** custom component to display visit information */}
-        <div className="grid grid-cols-2 gap-2 w-1/2">
-          <DataConfirmRow label="Visit name:" value={formData.name} />
-          <DataConfirmRow
-            label="Meeting point level:"
-            value={formData.meetingPointLevel}
-          />
-          <DataConfirmRow label="Date:" value={formData.date} />
-          <DataConfirmRow
-            label="Meeting point stand:"
-            value={formData.meetingPointStand}
-          />
-          <DataConfirmRow label="Entry time:" value={formData.time} />
-          <DataConfirmRow
-            label="Meeting point room:"
-            value={formData.meetingPointRoom}
-          />
-          <DataConfirmRow label="Visit duration:" value={formData.duration} />
-        </div>{" "}
+        <DataReview formData={formData} />
         {/** custom button to next page which will back to first page with form data resetted */}
         <div className="flex gap-4 justify-end">
           <Button text="Register a new Visit" />

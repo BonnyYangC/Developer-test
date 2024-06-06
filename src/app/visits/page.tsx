@@ -1,10 +1,10 @@
 "use client";
 
-import VisitsForm from "./components/VisitsForm";
-import VisitDetailForm from "./components/VisitDetailForm";
-import VisitReviewForm from "./components/VisitReviewForm";
-import { useFormState } from "./components/FormContext";
-import VisitSubmittedForm from "./components/VisitSubmittedForm";
+import VisitsForm from "./components/visitsForm";
+import VisitDetailForm from "./components/visitDetailForm";
+import VisitReviewForm from "./components/visitReviewForm";
+import { useFormState } from "./components/formContext";
+import VisitSubmittedForm from "./components/visitSubmittedForm";
 
 function ActiveStepFormComponent() {
   const { step } = useFormState();

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { FormProvider } from "./components/FormContext";
+import { FormProvider } from "./components/formContext";
 
 export default function VisitsLayout({
   children,
