@@ -15,7 +15,7 @@ npm run dev
 Open [http://localhost:3000/visits](http://localhost:3000/visits) with your browser to see the result.
 
 ## File strucure
-
+```bash
 --src
 |
 |-- app
@@ -40,6 +40,7 @@ Open [http://localhost:3000/visits](http://localhost:3000/visits) with your brow
                     |-- visitSubmittedForm.tsx : forth design page
                     |-- dataReview.tsx : custom view to review visit details
                     |-- dataConfirmRow.tsx : custom row to display each details field
+```
 
 ## To Be Improved
 1. Use pre-defined visit detail fields to render visitDetailForm.tsx
