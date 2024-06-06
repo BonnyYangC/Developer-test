@@ -43,8 +43,9 @@ Open [http://localhost:3000/visits](http://localhost:3000/visits) with your brow
 
 ## To Be Improved
 1. Use pre-defined visit detail fields to render visitDetailForm.tsx
-2. Better to use select option text instead of option value to construct formData
+2. Better to use selector option text instead of option value to construct formData
 3. Validation of form data
 4. Integrate date picker
+5. Test case
 
 
