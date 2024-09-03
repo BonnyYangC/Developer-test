@@ -41,7 +41,7 @@ const updateIssue = (req, res) => {
   const updates = req.body
   getDb().collection('issue')
     .updateOne({ _id: new ObjectId(req.params.id) }, { $set: updates })
-    .then(result => res.status(200).json(result))
+    .then(result => res.status(200).json(updates))
     .catch(err => res.status(500).json('Can not update the doc'))
 }
 
