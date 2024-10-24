@@ -1,7 +1,8 @@
 name: Clear cache
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [montu-map-search]
 
 permissions:
   actions: write
