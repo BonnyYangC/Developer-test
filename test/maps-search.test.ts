@@ -46,7 +46,7 @@ describe("Tomtom Places E2E Tests", () => {
     it("returns a promise", () => {
       const res = getPlaceAutocomplete(
         process.env.TOMTOM_API_KEY,
-        "Charlotte Street"
+        "Kerry Road"
       );
       expect(res).toBeInstanceOf(Promise);
     });
@@ -54,7 +54,7 @@ describe("Tomtom Places E2E Tests", () => {
     it("returns an array", async () => {
       const res = await getPlaceAutocomplete(
         process.env.TOMTOM_API_KEY,
-        "Charlotte Street"
+        "Kerry Road"
       );
       expect(res).toBeInstanceOf(Array);
     });
@@ -64,7 +64,7 @@ describe("Tomtom Places E2E Tests", () => {
         process.env.TOMTOM_API_KEY,
         "asfasffasfasafsafs"
       );
-      expect(res).toBeNull(); //toStrictEqual([]);
+      expect(res).toBeNull();
     });
 
     it("handles error", async () => {
