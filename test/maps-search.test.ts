@@ -25,6 +25,7 @@ describe("Tomtom Places E2E Tests", () => {
     });
 
     it("handles no results", async () => {
+      await new Promise((resolve) => setTimeout(resolve, 100));
       const res = await getPlaceAutocomplete(
         process.env.TOMTOM_API_KEY,
         "asfasffasfasafsafs"

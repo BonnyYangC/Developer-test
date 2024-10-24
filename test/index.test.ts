@@ -18,6 +18,7 @@ describe("Tomtom Places E2E Tests", () => {
     });
 
     it("can fetch from the autocomplete api", async () => {
+      await new Promise((resolve) => setTimeout(resolve, 100));
       const res = await getAutoCompleteDetails("Charlotte Street");
       const firstRes = res[0];
       expect(firstRes).toHaveProperty("placeId");
@@ -29,6 +30,7 @@ describe("Tomtom Places E2E Tests", () => {
     });
 
     it("handles no results", async () => {
+      await new Promise((resolve) => setTimeout(resolve, 100));
       const res = await getAutoCompleteDetails("asfasffasfasafsafs");
       expect(res).toBeNull(); //toStrictEqual([]);
     });
