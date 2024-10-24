@@ -1,7 +1,6 @@
 name: CICD
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
   # push:
   #   branches: [montu-map-search]
 
