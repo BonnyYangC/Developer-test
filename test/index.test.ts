@@ -7,10 +7,6 @@ config();
 // These are end-to-end tests and need an api key
 describe("Tomtom Places E2E Tests", () => {
   describe("getAutoCompleteDetails", () => {
-    beforeEach(async () => {
-      await new Promise((resolve) => setTimeout(resolve, 100));
-    });
-
     it("returns a promise", () => {
       const res = getAutoCompleteDetails("Charlotte Street");
       expect(res).toBeInstanceOf(Promise);
