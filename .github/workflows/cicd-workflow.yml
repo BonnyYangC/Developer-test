@@ -5,6 +5,19 @@ on:
     branches: [montu-challenge-map-search]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Run install
+        run: yarn install
+      - name: Create env file
+        run: touch .env |
+          echo TOMTOM_API_KEY=${{ secrets.TOMTOM_API_KEY }} > .env
+      - name: Test the app
+        run: yarn test
+
   build:
     runs-on: ubuntu-latest
     steps:
