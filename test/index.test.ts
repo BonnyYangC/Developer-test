@@ -30,7 +30,7 @@ describe("Tomtom Places E2E Tests", () => {
 
     it("handles no results", async () => {
       const res = await getAutoCompleteDetails("asfasffasfasafsafs");
-      expect(res).toBeNull(); //toStrictEqual([]);
+      expect(res).toBeNull();
     });
 
     it("handles error", async () => {
