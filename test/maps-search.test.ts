@@ -8,7 +8,7 @@ config();
 
 // These are end-to-end tests and need an api key
 describe("Tomtom Places E2E Tests", () => {
-  xdescribe("getAutoCompleteDetails", () => {
+  describe("getAutoCompleteDetails", () => {
     it("returns a promise", () => {
       const res = getAutoCompleteDetails("Charlotte Street");
       expect(res).toBeInstanceOf(Promise);
