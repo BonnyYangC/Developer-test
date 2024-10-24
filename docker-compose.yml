@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+    code-challenge-docker:
+        build: .
+        working_dir: /var/www/app
+        volumes:
+            - ./:/var/www/app
+        ports:
+            - 8000:8000
