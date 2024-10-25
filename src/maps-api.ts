@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SearchApiResp } from "./types";
+import { SearchRespData, SearchResponse } from "./types";
 import { SearchApiError } from "./errors";
 
 // Function to fetch location data using TomTom Search API
@@ -7,7 +7,7 @@ import { SearchApiError } from "./errors";
 export async function getPlaceAutocomplete(
   key: string,
   address: string
-): Promise<SearchApiResp[] | null> {
+): Promise<SearchRespData[] | null> {
   const url = `https://api.tomtom.com/search/2/search/${address}.json'`;
   const params = {
     key,
@@ -16,7 +16,7 @@ export async function getPlaceAutocomplete(
   };
 
   try {
-    const autocomplete = await axios.get(url, {
+    const autocomplete = await axios.get<SearchResponse>(url, {
       params: params,
     });
     return processResponse(autocomplete.data);
@@ -26,7 +26,7 @@ export async function getPlaceAutocomplete(
 }
 
 // Function to translate response to formatted data structure
-function processResponse(data): SearchApiResp[] | null {
+function processResponse(data: SearchResponse): SearchRespData[] | null {
   if (data && data.results && data.results.length > 0) {
     return data.results.map((result) => {
       return {

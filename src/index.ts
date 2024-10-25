@@ -1,13 +1,13 @@
 import { handleError } from "./errors";
 import { getPlaceAutocomplete } from "./maps-api";
 import { AddrDetails } from "./types";
-import { SearchApiResp } from "./types";
+import { SearchRespData } from "./types";
 
 // Function to process the API response and extract address info
 export async function getAutoCompleteDetails(
   address: string
 ): Promise<AddrDetails[] | void | null> {
-  const apiKey = process.env.TOMTOM_API_KEY;
+  const apiKey = process.env.TOMTOM_API_KEY || "";
   // get autocomplete results
   const res = getPlaceAutocomplete(apiKey, address)
     .then(async (autocompleteResults) => {
@@ -19,7 +19,7 @@ export async function getAutoCompleteDetails(
 
 // Function to format auto complete results
 function processAutoCompleteResults(
-  data: SearchApiResp[] | null
+  data: SearchRespData[] | null
 ): AddrDetails[] | null {
   // loop over and get details and map results
   return data === null
