@@ -28,7 +28,8 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build docker image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/map-search .
-        env: TOMTOM_API_KEY=${{ secrets.TOMTOM_API_KEY }}
+        env:
+          TOMTOM_API_KEY: ${{ secrets.TOMTOM_API_KEY }}
       - name: Publish image to docker hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/map-search:latest
 
