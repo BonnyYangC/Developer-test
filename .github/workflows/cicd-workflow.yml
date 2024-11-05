@@ -17,6 +17,8 @@ jobs:
       #     echo TOMTOM_API_KEY=${{ secrets.TOMTOM_API_KEY }} > .env
       - name: Test the app
         run: yarn test
+        env:
+          TOMTOM_API_KEY: ${{ secrets.TOMTOM_API_KEY }}
 
   build:
     # needs: test
