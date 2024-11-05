@@ -1,10 +1,10 @@
-
-export default {
-  testEnvironment: 'node',            // Ensures Jest simulates a Node environment
-  //transform: {},                       // Disables Jest's default transform
-  //extensionsToTreatAsEsm: ['.js'],     // Specifies that .js files are ES modules
-  verbose: true,                      // Prints detailed test results
-  testMatch: ['**/tests/**/*.test.js'], // Matches test files in `tests` folder ending in `.test.js`
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'], // Matches test files with .test.ts or .spec.ts
+  moduleFileExtensions: ['ts', 'js'],             // Recognizes .ts and .js extensions
+  roots: ['<rootDir>/tests'],                       // Where Jest will look for test files
+  verbose: true,                                   // Enables detailed test reports
   collectCoverage: true,              // Enables coverage reporting
   coverageDirectory: 'coverage',      // Specifies the directory for coverage reports
 };
