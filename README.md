@@ -1,30 +1,61 @@
-##Build and Run
+# Set up
+> npm init -y
+> 
+> npm install express
+> 
+> npm install --save-dev typescript @types/node @types/express ts-node nodemon
+> 
+> npx tsc --init
+> 
+> npm install --save-dev jest @types/jest ts-jest
+> 
+> npx ts-jest config:init
+> 
+> npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
+> 
+> npx eslint --init
+> 
 
-#By default, server runs on port 3000, indicate specific port in .env file
+# Build and Run
 
-#Install node packages
-npm install
+By default, server runs on port 3000, indicate specific port in .env file
 
-#Start the development server
-npm run dev
+## Install node packages
+> npm install
 
-#Build the project
-npm build
+## Start the development server
+> npm run dev
 
-#Run the compiled code
-npm start
+## Build the project
+> npm build
 
-#Run test
-npm test
+## Run the compiled code
+> npm start
 
-##File Structure
-ghostlink-backend-service/
-├── src/
-│ └── app.ts # Your application code
-├── tests/
-│ └── xxxx.test.ts # Example test file
-├── dist/ # Compiled JavaScript files
-├── node_modules/
-├── package.json
-├── jest.config.js # Jest configuration
-└── tsconfig.json # TypeScript configuration
+## Run test
+> npm test
+
+## Run eslint
+> npm run lint
+
+# File Structure
+> ghostlink-backend-service/
+> 
+> ├── src/
+> 
+> │ └── app.ts # Your application code
+> 
+> ├── tests/
+> 
+> │ └── xxxx.test.ts # Example test file
+> 
+> ├── dist/ # Compiled JavaScript files
+> 
+> ├── node_modules/
+> 
+> ├── package.json
+> 
+> ├── jest.config.js # Jest configuration
+> 
+> └── tsconfig.json # TypeScript configuration
+> 
