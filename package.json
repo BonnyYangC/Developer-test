@@ -1,0 +1,26 @@
+{
+  "name": "interview-technical-exercise-back-end",
+  "version": "1.0.0",
+  "description": "In this exercise, we look forward to working with you and learning about how you approach hands-on technical work.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "tsc && jest dist",
+    "compile": "tsc",
+    "start": "tsc && node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-typescript": "^7.24.1",
+    "@types/node": "^20.12.10",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  }
+}
