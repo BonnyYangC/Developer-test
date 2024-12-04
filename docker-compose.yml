@@ -1,7 +1,16 @@
 version: '3.8'
 services:
   app:
-    build: .
+    build: 
+      dockerfile: Dockerfile-app
+      context: .
     container_name: php-cli-app
+    volumes:
+      - .:/app
+  test:
+    build: 
+      dockerfile: Dockerfile-test
+      context: .
+    container_name: php-cli-test
     volumes:
       - .:/app

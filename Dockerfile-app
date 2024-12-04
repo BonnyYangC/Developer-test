@@ -9,7 +9,8 @@ COPY composer.* .
 RUN apt-get update
 RUN apt-get install -y git
 RUN composer install
+RUN composer dumpautoload
 
 COPY . .
 
-CMD [ "php", "app.php" ]
+CMD [ "bash" ]
