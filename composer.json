@@ -1,0 +1,14 @@
+{
+    "name": "acer/assessment-reporting",
+    "description": "a simple assessment reporting system",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Acer\\AssessmentReporting\\": "src/"
+        }
+    },
+    "require": {}
+}
