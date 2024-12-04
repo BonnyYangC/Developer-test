@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ACER-php-cli-application]
+    branches: [ACER-c83f7753-0b50-4984-af80-135df5b45c5c]
 
 jobs:
   test:
