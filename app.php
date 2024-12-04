@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use App\Greeting;
 use App\ReportGenerator;
 
 echo "Please enter the following\n";
@@ -30,4 +29,4 @@ if (!is_numeric($reportId) || !(3 >= $reportId && 1 <= $reportId))
 }
 
 // Start report generator
-ReportGenerator::create($studentId, $reportId)->handle();
+echo ReportGenerator::create($studentId, $reportId)->handle() . PHP_EOL;

@@ -7,13 +7,15 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "App\\Models\\": "src/models",
+            "App\\Reports\\": "src/reports",
+            "App\\Loaders\\": "src/loaders"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
         }
-    },
-    "require": {}
+    }
 }
