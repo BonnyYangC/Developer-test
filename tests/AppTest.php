@@ -4,7 +4,7 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 
-class AppTest extends BaseTest //TestCase
+class AppTest extends Base //TestCase
 {
   
   public function testEmptyInput()

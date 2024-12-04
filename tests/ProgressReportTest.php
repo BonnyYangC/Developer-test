@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class ProgressReportTest extends BaseTest
+class ProgressReportTest extends Base
 {
   
   public function testOutput()

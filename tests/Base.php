@@ -4,7 +4,7 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 
-class BaseTest extends TestCase
+abstract class Base extends TestCase
 {
   // Path to the CLI script
   protected $scriptPath;

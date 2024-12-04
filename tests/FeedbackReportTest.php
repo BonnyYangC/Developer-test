@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class FeedbackReportTest extends BaseTest
+class FeedbackReportTest extends Base
 {
   
   public function testOutput()

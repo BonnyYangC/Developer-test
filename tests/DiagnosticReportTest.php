@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-class DiagnosticReportTest extends BaseTest
+class DiagnosticReportTest extends Base
 {
   
   public function testOutput()
