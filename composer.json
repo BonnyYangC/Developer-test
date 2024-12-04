@@ -7,7 +7,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Acer\\AssessmentReporting\\": "src/"
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     },
     "require": {}
