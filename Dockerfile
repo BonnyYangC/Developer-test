@@ -4,13 +4,12 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 WORKDIR /app
 
-COPY composer.json /app
+COPY composer.* .
 
 RUN apt-get update
 RUN apt-get install -y git
 RUN composer install
 
-COPY . /app
+COPY . .
 
-# CMD ["./vendor/bin/phpunit"]
-CMD [ "php", "src/app.php" ]
+CMD [ "php", "app.php" ]
