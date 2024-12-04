@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ACER-c83f7753-0b50-4984-af80-135df5b45c5c]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Set up PHP with Composer
+        uses: shivammathur/setup-php@v3
+        with:
+          php-version: '8.2'
+          tools: composer
+
+      - name: Validate Composer installation
+        run: composer --version
+
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest
+
+      - name: Run tests
+        run: vendor/bin/phpunit --testdox
